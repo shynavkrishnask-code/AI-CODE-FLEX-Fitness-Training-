@@ -1,93 +1,108 @@
-<h1 align="center">💪 AI Fitness Assistant 🤖</h1>
+# CodeFlex AI - Premium Next.js Starter Template
 
-![Demo App](/public/screenshot-for-readme.png)
+A modern, high-performance starter boilerplate for Next.js, React 19, Tailwind CSS v4, and shadcn/ui. Pre-configured with developer-friendly tooling, theme system (dark mode), and a clean structure optimized for rapid web application development.
 
-## Highlights:
+---
 
-- 🚀 Tech stack: Next.js, React, Tailwind & Shadcn UI
-- 🎙️ Voice AI Assistant (Vapi)
-- 🧠 LLM Integration (Gemini AI)
-- 🏋️ Personalized Workout Plans
-- 🥗 Custom Diet Programs
-- 🔒 Authentication & Authorization (Clerk)
-- 💾 Database (Convex)
-- 🎬 Real-time Program Generation
-- 💻 Layouts
-- 🎭 Client & Server Components
+## 🚀 Key Features
 
-## Features
+*   **Next.js 16 & React 19** – App Router, Server Actions, and rendering optimizations.
+*   **Tailwind CSS v4** – Built with the latest Tailwind compiler for blazing-fast build times.
+*   **shadcn/ui Integration** – Accessible, customizable UI components ready to use.
+*   **Theme Management** – Fully integrated dark/light mode toggle with `next-themes`.
+*   **TypeScript Ready** – Strongly typed layout, page, and component templates.
+*   **Code Quality Suite** – Pre-configured ESLint, Prettier, and TypeScript checks.
 
-- **Smart AI Assistant**: Engage in conversation with an AI that asks about your fitness goals, physical condition, and preferences
-- **Personalized Workout Plans**: Get custom exercise routines based on your fitness level, injuries, and goals
-- **Diet Recommendations**: Receive personalized meal plans accounting for your allergies and dietary preferences
-- **User Authentication**: Sign in with GitHub, Google, or email/password
-- **Program Management**: Create and view multiple fitness programs with only the latest one active
-- **Responsive Design**: Beautiful UI that works across all devices
+---
 
-## Setup .env file
+## 🛠️ Tech Stack
 
-```js
-# Clerk Authentication
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
+*   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+*   **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+*   **Icons:** [Lucide React](https://lucide.dev/)
+*   **Themes:** [Next Themes](https://github.com/pacocoursey/next-themes)
 
-# Clerk Redirect URLs
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+---
 
-# Vapi Voice AI
-NEXT_PUBLIC_VAPI_WORKFLOW_ID=
-NEXT_PUBLIC_VAPI_API_KEY=
+## 📦 Getting Started
 
-# Convex Database
-CONVEX_DEPLOYMENT=
-NEXT_PUBLIC_CONVEX_URL=
-```
+### Prerequisites
 
-## Getting Started
+Ensure you have Node.js (v18.x or later) and npm installed.
 
-1. Clone the repository
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/codeflex-ai.git
+   cd codeflex-ai/next-app
+   ```
+
 2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```shell
-npm install
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result!
+
+---
+
+## 🧩 Adding & Using Components
+
+This template uses **shadcn/ui**. To add new components to your project, use:
+
+```bash
+npx shadcn@latest add [component-name]
 ```
 
-3. Set up your environment variables as shown above
-4. Run the development server:
-
-```shell
-npm run dev
+For example, to add a Dialog:
+```bash
+npx shadcn@latest add dialog
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+### Importing Components
+Once added, you can import and use them anywhere in your application:
 
-## Deployment
+```tsx
+import { Button } from "@/components/ui/button";
 
-This application can be easily deployed to Vercel:
-
-```shell
-npm run build
-npm run start
+export default function Home() {
+  return <Button>Click me</Button>;
+}
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+---
 
-## Technologies Used
+## 📂 Project Structure
 
-- **Next.js**: React framework for building the frontend and API routes
-- **Tailwind CSS & Shadcn UI**: For styling and UI components
-- **Clerk**: Authentication and user management
-- **Vapi**: Voice agent platform for conversational AI
-- **Convex**: Real-time database
-- **Gemini AI**: Large Language Model for generating personalized fitness programs
+```text
+next-app/
+├── app/                  # Next.js App Router (pages, layouts, globals)
+│   ├── globals.css       # Tailwind stylesheet
+│   ├── layout.tsx        # Main application layout with ThemeProvider
+│   └── page.tsx          # Home/landing page
+├── components/           # Custom React components
+│   ├── ui/               # shadcn/ui component library
+│   └── theme-provider.tsx# Theme support wrapper
+├── hooks/                # Custom React hooks
+├── lib/                  # Shared utilities and helper functions
+├── public/               # Static assets (images, icons)
+├── package.json          # Dependency and script manager
+└── tsconfig.json         # TypeScript configuration
+```
 
-## Learn More
+---
 
-To learn more about the technologies used in this project:
+## 🧹 Code Formatting & Linting
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Clerk Documentation](https://clerk.com/docs)
-- [Vapi Documentation](https://docs.vapi.ai)
-- [Convex Documentation](https://docs.convex.dev)
-- [Gemini AI Documentation](https://ai.google.dev/gemini-api)
+Keep the codebase clean and consistent with the built-in commands:
+
+*   **Linting:** `npm run lint`
+*   **Formatting:** `npm run format`
+*   **Type Checking:** `npm run typecheck`
